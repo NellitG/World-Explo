@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen bg-white">
-    <Header />
+    <RouterView />
+    <!-- <Header /> -->
     <div class="mt-4">
       <RouterView />
       <!-- LOGIN MODAL -->      
@@ -11,7 +12,8 @@
         @click="closeModal()"
       >
         <div class="modal-content max-w-7xl" @click.stop>
-          <LoginEmail />
+          <Register />
+          <Login />
         </div>
       </div>
     </div>
@@ -21,10 +23,11 @@
 
 <script setup>
 import { RouterView } from "vue-router";
-import Header from "./components/Header.vue";
+import Register from "./components/Register.vue";
+import Login from "./components/Login.vue";
 import Footer from "./components/Footer.vue";
 import { useAuthStore } from "./store";
-import LoginEmail from "@/components/LoginEmail.vue";
+import LoginEmail from "@/components/Login.vue";
 
 /**VARIABLES */
 const auth = useAuthStore();
